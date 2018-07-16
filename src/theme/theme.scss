@@ -1,0 +1,17 @@
+@import "~@angular/material/theming";
+
+@import "light-green-palette";
+@import "dark-green-palette";
+@import "yellow-palette";
+@import "gray-palette";
+@import "mint-green-palette";
+
+@include mat-core();
+
+$custom-primary: mat-palette($yellow);
+$custom-accent: mat-palette($dark-green);
+$custom-warn: mat-palette($gray);
+
+$custom-theme: mat-dark-theme($custom-primary, $custom-accent, $custom-warn);
+
+@include angular-material-theme($custom-theme);
