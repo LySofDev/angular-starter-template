@@ -47,6 +47,15 @@ export class AuthService {
   * Attempt to authenticate the user
   */
   authenticateWith(request: LoginRequest): Observable<boolean> {
+    // MOCK API REQUEST - SHOULD BE REMOVED
+    if (environment.mockApi) {
+      this.storedToken.store({
+        prefix: environment.mockPrefix,
+        payload: environment.mockJwt
+      });
+      return of(true);
+    }
+    // EXAMPLE REQUEST
     return this.http.post(
       `${environment.apiUrl}/users/authenticate`,
       { authenticate: request }

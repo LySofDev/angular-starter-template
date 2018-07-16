@@ -1,0 +1,17 @@
+@mixin column-form {
+  .standard-form {
+    width: 300px;
+    margin: 2em auto;
+  }
+
+  .standard-form form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .standard-form .actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+  }
+}

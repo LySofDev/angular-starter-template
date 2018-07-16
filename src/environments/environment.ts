@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  mockApi: true,
+  mockPrefix: "Bearer",
+  mockJwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjEsImVtYWlsIjoibWFjLmhkekBnbWFpbC5jb20iLCJyb2xlIjoiY2xpZW50In0sIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMn0.6xvFEv4HTQFY_uXzxA_wk336BS4gLRHb0DPkdfPXDig",
+  apiUrl: "http://localhost:3000" // Rails
+  // apiUrl: "http://localhost:6000" // Node
+  // apiUrl: "http://localhost:8080" // Spring
 };
 
 /*

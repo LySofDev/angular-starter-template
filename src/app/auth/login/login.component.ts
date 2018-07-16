@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   public form: FormGroup;
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       if (success) {
         const email = this.auth.userAsPrincipal().email;
         this.flash.open(`Signed in successfully as ${email}.`, 'Ok');
-        this.router.navigate(['/tabs']);
+        this.router.navigate(['/home']);
       } else {
         this.flash.open('Invalid email or password', 'Ok');
         this.clearForm();

@@ -20,6 +20,15 @@ export class UsersService {
   ) { }
 
   registerWith(request: CreateUserRequest): Observable<boolean> {
+    // MOCK API REQUEST - SHOULD BE REMOVED
+    if (environment.mockApi) {
+      this.storedToken.store({
+        prefix: environment.mockPrefix,
+        payload: environment.mockJwt
+      });
+      return of(true);
+    }
+    // EXAMPLE REQUEST
     return this.http.post(
       `${environment.apiUrl}/users`,
       { user: request }

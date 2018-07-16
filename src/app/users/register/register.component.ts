@@ -9,7 +9,7 @@ import { UsersService } from '../users.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   public form: FormGroup;
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
       if (success) {
         const email = this.auth.userAsPrincipal().email;
         this.flash.open(`Signed up successfully as ${email}.`, 'Ok');
-        this.router.navigate(['/tabs']);
+        this.router.navigate(['/home']);
       } else {
         this.flash.open('Invalid email or password', 'Ok');
         this.clearForm();

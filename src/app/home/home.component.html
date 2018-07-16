@@ -1,0 +1,29 @@
+<header>
+  <mat-toolbar>
+    <span>Angular Security Demo</span>
+  </mat-toolbar>
+</header>
+
+<h1>Home Page</h1>
+
+<div *ngIf="isAuthenticated()">
+  <h3>Signed in as {{ currentUserEmail() }}.</h3>
+
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="signOut()">
+    Sign Out
+  </button>
+</div>
+
+<div *ngIf="!isAuthenticated()">
+  <h3>Currently anonymous.</h3>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="signIn()">
+    Sign In
+  </button>
+</div>
