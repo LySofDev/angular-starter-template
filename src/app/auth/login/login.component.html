@@ -1,0 +1,48 @@
+<main class="standard-form">
+  <mat-card>
+
+    <mat-card-title>Login</mat-card-title>
+
+    <form [formGroup]="form">
+
+      <mat-form-field>
+        <input
+          matInput
+          class="auth-email"
+          type="email"
+          name="email"
+          required
+          formControlName="email"
+          placeholder="Email"
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          class="auth-password"
+          type="password"
+          name="password"
+          required
+          formControlName="password"
+          placeholder="Password"
+        >
+      </mat-form-field>
+
+    <div class="actions">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="isDisabled()"
+        (click)="onSubmit()">
+        Login
+      </button>
+
+      <a mat-button color="accent" (click)="goToRegister()">
+        Register
+      </a>
+    </div>
+
+    </form>
+  </mat-card>
+</main>
